@@ -18,7 +18,7 @@
 
 국내 대기업 실무 환경을 타겟팅하여 대용량 데이터 처리와 비즈니스 리스크 방어에 집중한 프로젝트입니다.
 
-#### 1. 제조 산업 타겟 : [센서 데이터 기반 설비 고장 예지보전 시스템](https://github.com/your-username/your-repo-name)
+#### 1. 제조 산업 타겟 : [센서 데이터 기반 설비 고장 예지보전 시스템](https://github.com/Jisoopak0822/Predictive-Maintenance/blob/main/ai4i_baseline.ipynb)
 
 *다운타임 손실 방어를 위한 클래스 불균형 제어 및 통계적 임계값 최적화*
 
