@@ -31,7 +31,7 @@
 
 * **비즈니스 성과**: 고장 탐지 재현율 지표를 59%에서 **78%로 대폭 향상**시키며 잠재적 공정 정지 다운타임 리스크를 선제적으로 방어.
 
-#### 2. 금융 데이터 파이프라인 : [대용량 금융 이력 기반 신용 대출 부실 예측 시스템](https://github.com/your-username/your-repo-name)
+#### 2. 금융 데이터 파이프라인 : [대용량 금융 이력 기반 신용 대출 부실 예측 시스템](https://github.com/Jisoopak0822/-/blob/main/home_credit_portfolio.ipynb)
 
 *메모리 한계 극복을 위한 RDBMS 구축 및 통계적 파생 변수 발굴*
 
