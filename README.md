@@ -16,9 +16,22 @@
 
 ###  Featured Projects : 핵심 실무 프로젝트
 
+#### 1. 이커머스 전환율 최적화 : A/B 테스트 및 리텐션 분석(https://github.com/Jisoopak0822/-A-B-/blob/main/README.md)
+
+*사용자 행동 로그 기반 구매 퍼널 병목 진단 및 통계적 실험 설계*
+
+- **문제 정의**: 이커머스 행동 로그에서 View → Cart → Purchase 구매 여정을 분석하여 전환율 개선 우선순위를 도출.
+- **Funnel Analysis**: 동일 사용자·상품 기준 행동 순서를 추적한 결과 **View → Cart 4.69%, Cart → Purchase 36.98%, View → Purchase 1.74%**로 View → Cart 구간을 주요 개선 후보로 식별.
+- **Experiment Design**: Purchase Conversion Rate를 Primary KPI로 설정하고 **Power Analysis, MDE, Sample Size Calculation**을 통해 A/B 테스트 설계.
+- **Statistical Testing**: Treatment에서 **+12.42% Relative Lift**를 관찰했으며 Two-Proportion Z-Test 결과 **p=0.0182**, 95% CI **[+0.038%p, +0.405%p]**를 확인.
+- **Business Decision**: 통계적으로 유의했지만 사전 정의한 **15% MDE에는 미달**하여 즉시 Full Rollout보다 Treatment 개선 및 추가 실험을 제안.
+- **Retention Analysis**: Right Censoring을 고려하여 **7일 재구매율 15.25%, 14일 재구매율 26.32%** 산출.
+
+**Tech:** Python, Pandas, NumPy, SciPy, Statsmodels, Matplotlib, Seaborn · A/B Testing · Power Analysis · Hypothesis Testing · Retention Analysis
+
 국내 대기업 실무 환경을 타겟팅하여 대용량 데이터 처리와 비즈니스 리스크 방어에 집중한 프로젝트입니다.
 
-#### 1. 제조 산업 타겟 : [센서 데이터 기반 설비 고장 예지보전 시스템](https://github.com/Jisoopak0822/Predictive-Maintenance/blob/main/ai4i_baseline.ipynb)
+#### 2. 제조 산업 타겟 : [센서 데이터 기반 설비 고장 예지보전 시스템](https://github.com/Jisoopak0822/Predictive-Maintenance/blob/main/ai4i_baseline.ipynb)
 
 *다운타임 손실 방어를 위한 클래스 불균형 제어 및 통계적 임계값 최적화*
 
@@ -31,7 +44,7 @@
 
 * **비즈니스 성과**: 고장 탐지 재현율 지표를 59%에서 **78%로 대폭 향상**시키며 잠재적 공정 정지 다운타임 리스크를 선제적으로 방어.
 
-#### 2. 금융 데이터 파이프라인 : [대용량 금융 이력 기반 신용 대출 부실 예측 시스템](https://github.com/Jisoopak0822/-/blob/main/home_credit_portfolio.ipynb)
+#### 3. 금융 데이터 파이프라인 : [대용량 금융 이력 기반 신용 대출 부실 예측 시스템](https://github.com/Jisoopak0822/-/blob/main/home_credit_portfolio.ipynb)
 
 *메모리 한계 극복을 위한 RDBMS 구축 및 통계적 파생 변수 발굴*
 
