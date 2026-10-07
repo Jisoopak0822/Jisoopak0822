@@ -88,7 +88,7 @@ Large-scale Data Processing · SQL · Feature Engineering · Credit Risk Modelin
 
 `PyTorch · CNN · NLP · Hyperparameter Tuning`
 
-### HR Consulting RDBMS Design
+### [HR Consulting RDBMS Design](https://github.com/Jisoopak0822/-HR-Consulting-Firm-Database-System/blob/main/Project%20Final%20Report.pdf) 
 급여·커미션·프로젝트 데이터를 관리하기 위한 **15개 테이블 관계형 데이터베이스와 ERD** 설계.
 
 `SQL · RDBMS · ERD · Normalization`
