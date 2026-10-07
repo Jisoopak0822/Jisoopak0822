@@ -16,7 +16,7 @@
 
 ###  Featured Projects : 핵심 실무 프로젝트
 
-#### 1. 이커머스 전환율 최적화 : A/B 테스트 및 리텐션 분석(https://github.com/Jisoopak0822/-A-B-/blob/main/README.md)
+#### 1. 이커머스 전환율 최적화 : [A/B 테스트 및 리텐션 분석](https://github.com/Jisoopak0822/-A-B-/blob/main/README.md)
 
 *사용자 행동 로그 기반 구매 퍼널 병목 진단 및 통계적 실험 설계*
 
