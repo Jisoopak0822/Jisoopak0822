@@ -31,15 +31,17 @@
 
 국내 대기업 실무 환경을 타겟팅하여 대용량 데이터 처리와 비즈니스 리스크 방어에 집중한 프로젝트입니다.
 
-#### 2. 제조 산업 타겟 : [센서 데이터 기반 설비 고장 예지보전 시스템](https://github.com/Jisoopak0822/Predictive-Maintenance/blob/main/ai4i_baseline.ipynb)
+#### 2. 제조 산업 타겟 : [비용 민감형 설비 고장 예지보전 시스템](https://github.com/Jisoopak0822/Predictive-Maintenance/blob/main/README.md)
 
-*다운타임 손실 방어를 위한 클래스 불균형 제어 및 통계적 임계값 최적화*
+*희소 고장 데이터에서 미탐 비용을 최소화하는 Predictive Maintenance 의사결정 시스템*
 
-* **문제 정의**: 3.4%에 불과한 극심한 고장 데이터 불균형 및 센서 간 다중공선성 리스크 존재.
-* **해결 과정**:
-* **PCA 차원 축소**: 상관성이 높은 온도 센서들을 1개의 주성분으로 압축해 다중공선성 제거.
-* **Data Leakage 차단**: 모델 평가의 신뢰성을 위해 Train 데이터에만 한정하여 SMOTE를 적용해 1대 1 데이터 균형 확보.
-* **Threshold 튜닝**: 단순 점검을 의미하는 오탐보다 라인 셧다운을 유발하는 미탐 비용이 압도적으로 크다는 비즈니스 논리에 기반해 모델 임계값을 0.5에서 0.3으로 하향 조정.
+- **문제 정의**: 전체 설비 데이터 중 실제 고장은 약 **3.4%**에 불과해 Accuracy 중심 모델링만으로는 고장 설비를 안정적으로 탐지하기 어려운 클래스 불균형 문제가 존재.
+- **모델링 전략**: Baseline, Class Weight, SMOTE 기반 불균형 처리 전략과 Logistic Regression, Random Forest, Gradient Boosting, LightGBM을 비교하여 모델 성능을 검증.
+- **평가 기준 개선**: Accuracy뿐 아니라 **Recall, Precision, F1-score, ROC-AUC, PR-AUC**를 함께 평가하고, 희소 고장 탐지 성능을 반영하기 위해 PR-AUC 중심으로 모델을 비교.
+- **Data Leakage 방지**: Train/Test 분리 이후 Scaling, PCA, Sampling이 학습 데이터에서만 수행되도록 Pipeline을 구성해 평가 신뢰성 확보.
+- **비용 기반 Threshold 최적화**: 기본 임계값 0.5를 고정하지 않고, 고장 미탐지(False Negative) 비용과 불필요한 점검(False Positive) 비용을 반영한 Cost Function을 설계해 최적 의사결정 임계값 탐색.
+- **운영 의사결정 연결**: 예측 확률을 Normal / Watch / Preventive Inspection / Critical 단계로 구분해 유지보수팀이 고위험 설비를 우선 점검할 수 있는 **Risk-Based Maintenance Policy**로 확장.
+- **비즈니스 목표**: 단순 예측 정확도 향상이 아니라 **생산라인 다운타임 리스크 감소와 예방정비 자원의 효율적 배분**을 지원하는 데이터 기반 유지보수 의사결정 체계 구축.
 
 
 * **비즈니스 성과**: 고장 탐지 재현율 지표를 59%에서 **78%로 대폭 향상**시키며 잠재적 공정 정지 다운타임 리스크를 선제적으로 방어.
