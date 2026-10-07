@@ -83,7 +83,7 @@ Large-scale Data Processing · SQL · Feature Engineering · Credit Risk Modelin
 
 핵심 프로젝트 외에 데이터베이스 설계와 딥러닝/NLP 기반 역량을 확장한 프로젝트입니다.
 
-### CNN 기반 Twitter Sentiment Classification
+### [CNN 기반 Twitter Sentiment Classification](https://github.com/Jisoopak0822/Twitter-Sentiment-Classification-via-CNN/blob/main/README.md)
 160만 건의 Sentiment140 데이터를 활용해 PyTorch CNN 모델을 구축하고 **Test Accuracy 80.08%** 달성.
 
 `PyTorch · CNN · NLP · Hyperparameter Tuning`
@@ -93,7 +93,7 @@ Large-scale Data Processing · SQL · Feature Engineering · Credit Risk Modelin
 
 `SQL · RDBMS · ERD · Normalization`
 
-### Amazon Prime Video EDA
+### [Amazon Prime Video EDA](https://github.com/Jisoopak0822/Amazon-Prime-Video-Content-Analysis/blob/main/README.md)
 콘텐츠 장르 및 시청 트렌드를 분석하고 데이터 기반 마케팅 인사이트를 시각화.
 
 `Python · Pandas · Seaborn · EDA`
