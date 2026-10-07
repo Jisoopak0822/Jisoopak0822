@@ -1,85 +1,100 @@
-#  통계적 근거를 바탕으로 비즈니스 의사결정을 지원하는 Data Scientist 박지수 입니다.
+# 통계적 실험과 머신러닝으로 비즈니스 의사결정을 설계하는 Data Scientist 박지수입니다.
 
-수학과 통계학 석사 과정에서 다진 탄탄한 이론적 배경을 바탕으로, 단순한 모델 예측을 넘어 대용량 데이터 파이프라인 구축과 비즈니스 비용 최적화에 집중합니다. 데이터 이면의 인과관계를 분석하고, 제조, 금융, 통신 등 현업의 문제를 해결하는 실용적인 머신러닝 솔루션을 설계합니다.
+수학·통계학 기반의 정량적 분석 역량을 바탕으로 **실험 설계, 예측 모델링, 대용량 데이터 처리**를 실제 비즈니스 의사결정 문제에 연결하는 데 집중합니다.
 
----
+단순히 높은 모델 Accuracy를 만드는 것보다  
+**어떤 지표를 최적화해야 하는지, 어떤 오류가 더 비싼지, 분석 결과를 실제 의사결정으로 어떻게 연결할지**를 중요하게 생각합니다.
 
-### 🛠 Technical Toolbox
-
-* **Languages**:   
-* **Machine Learning & Stats**: Scikit-learn, LightGBM, Random Forest, PCA, SMOTE, 통계적 가설 검정
-* **Data Engineering**: SQLite, 대용량 데이터 Chunking, RDBMS 논리적 및 물리적 설계, 데이터 정규화
-* **Deep Learning & NLP**: PyTorch, CNN, Sentiment Analysis
-* **Visualization**: Pandas, NumPy, Matplotlib, Seaborn, Tableau
+이커머스 A/B Testing, 제조 Predictive Maintenance, 금융 신용위험 분석 프로젝트를 통해 **문제 정의 → 데이터 처리 → 통계/ML 모델링 → 검증 → 비즈니스 의사결정**의 전체 분석 과정을 구현했습니다.
 
 ---
 
-###  Featured Projects : 핵심 실무 프로젝트
+### 🛠 Technical Skills
 
-#### 1. 이커머스 전환율 최적화 : [A/B 테스트 및 리텐션 분석](https://github.com/Jisoopak0822/-A-B-/blob/main/README.md)
-
-*사용자 행동 로그 기반 구매 퍼널 병목 진단 및 통계적 실험 설계*
-
-- **문제 정의**: 이커머스 행동 로그에서 View → Cart → Purchase 구매 여정을 분석하여 전환율 개선 우선순위를 도출.
-- **Funnel Analysis**: 동일 사용자·상품 기준 행동 순서를 추적한 결과 **View → Cart 4.69%, Cart → Purchase 36.98%, View → Purchase 1.74%**로 View → Cart 구간을 주요 개선 후보로 식별.
-- **Experiment Design**: Purchase Conversion Rate를 Primary KPI로 설정하고 **Power Analysis, MDE, Sample Size Calculation**을 통해 A/B 테스트 설계.
-- **Statistical Testing**: Treatment에서 **+12.42% Relative Lift**를 관찰했으며 Two-Proportion Z-Test 결과 **p=0.0182**, 95% CI **[+0.038%p, +0.405%p]**를 확인.
-- **Business Decision**: 통계적으로 유의했지만 사전 정의한 **15% MDE에는 미달**하여 즉시 Full Rollout보다 Treatment 개선 및 추가 실험을 제안.
-- **Retention Analysis**: Right Censoring을 고려하여 **7일 재구매율 15.25%, 14일 재구매율 26.32%** 산출.
-
-**Tech:** Python, Pandas, NumPy, SciPy, Statsmodels, Matplotlib, Seaborn · A/B Testing · Power Analysis · Hypothesis Testing · Retention Analysis
-
-국내 대기업 실무 환경을 타겟팅하여 대용량 데이터 처리와 비즈니스 리스크 방어에 집중한 프로젝트입니다.
-
-#### 2. 제조 산업 타겟 : [비용 민감형 설비 고장 예지보전 시스템](https://github.com/Jisoopak0822/Predictive-Maintenance/blob/main/README.md)
-
-*희소 고장 데이터에서 미탐 비용을 최소화하는 Predictive Maintenance 의사결정 시스템*
-
-- **문제 정의**: 전체 설비 데이터 중 실제 고장은 약 **3.4%**에 불과해 Accuracy 중심 모델링만으로는 고장 설비를 안정적으로 탐지하기 어려운 클래스 불균형 문제가 존재.
-- **모델링 전략**: Baseline, Class Weight, SMOTE 기반 불균형 처리 전략과 Logistic Regression, Random Forest, Gradient Boosting, LightGBM을 비교하여 모델 성능을 검증.
-- **평가 기준 개선**: Accuracy뿐 아니라 **Recall, Precision, F1-score, ROC-AUC, PR-AUC**를 함께 평가하고, 희소 고장 탐지 성능을 반영하기 위해 PR-AUC 중심으로 모델을 비교.
-- **Data Leakage 방지**: Train/Test 분리 이후 Scaling, PCA, Sampling이 학습 데이터에서만 수행되도록 Pipeline을 구성해 평가 신뢰성 확보.
-- **비용 기반 Threshold 최적화**: 기본 임계값 0.5를 고정하지 않고, 고장 미탐지(False Negative) 비용과 불필요한 점검(False Positive) 비용을 반영한 Cost Function을 설계해 최적 의사결정 임계값 탐색.
-- **운영 의사결정 연결**: 예측 확률을 Normal / Watch / Preventive Inspection / Critical 단계로 구분해 유지보수팀이 고위험 설비를 우선 점검할 수 있는 **Risk-Based Maintenance Policy**로 확장.
-- **비즈니스 목표**: 단순 예측 정확도 향상이 아니라 **생산라인 다운타임 리스크 감소와 예방정비 자원의 효율적 배분**을 지원하는 데이터 기반 유지보수 의사결정 체계 구축.
-
-
-* **비즈니스 성과**: 고장 탐지 재현율 지표를 59%에서 **78%로 대폭 향상**시키며 잠재적 공정 정지 다운타임 리스크를 선제적으로 방어.
-
-#### 3. 금융 데이터 파이프라인 : [대용량 금융 이력 기반 신용 대출 부실 예측 시스템](https://github.com/Jisoopak0822/-/blob/main/home_credit_portfolio.ipynb)
-
-*메모리 한계 극복을 위한 RDBMS 구축 및 통계적 파생 변수 발굴*
-
-* **문제 정의**: 수백만 행에 달하는 2.68GB 규모의 다중 로그 데이터를 Pandas 단일 메모리로 처리할 때 발생하는 메모리 초과 크래시 현상.
-* **해결 과정**:
-* **데이터 아키텍처**: Python Chunking 기법과 SQLite를 연동하여 메모리 초과 없는 무중단 데이터 적재 파이프라인 구축.
-* **SQL 파생 변수 생성**: 170만 건의 과거 타기관 이력 테이블을 LEFT JOIN 및 서브쿼리로 집계하여 씬 파일러 고객 특성을 반영한 총 채무액과 과거 대출 건수 파생 변수 창출.
-
-
-* **비즈니스 성과**: 데이터 전처리 메모리 점유율을 70% 이상 절감했으며, 직접 설계한 파생 변수가 LightGBM 모델의 **Feature Importance 2위와 4위**에 랭크되며 부실 예측의 핵심 드라이버임을 통계적으로 증명.
+- **Languages:** Python, SQL
+- **Statistics & Experimentation:** A/B Testing, Hypothesis Testing, Power Analysis, Confidence Interval, Retention Analysis
+- **Machine Learning:** Scikit-learn, LightGBM, Random Forest, Gradient Boosting, Logistic Regression, PCA, SMOTE
+- **Data Engineering:** SQLite, SQL JOIN/Aggregation, Chunk Processing, RDBMS Design, Data Pipeline
+- **Deep Learning & NLP:** PyTorch, CNN, Sentiment Analysis
+- **Visualization & Analytics:** Pandas, NumPy, Matplotlib, Seaborn, Tableau
 
 ---
 
-### 📚 Academic & Foundation Projects : 기초 역량 및 딥러닝 프로젝트
+# Featured Projects
 
-데이터 아키텍처 설계와 딥러닝 자연어 처리에 대한 기반 역량을 다진 프로젝트입니다.
+## 01. E-commerce Experimentation
+### [A/B 테스트 및 구매 퍼널·리텐션 분석](https://github.com/Jisoopak0822/-A-B-/blob/main/README.md)
 
-#### 3. [Twitter 텍스트 감성 분류 : CNN 기반 Deep Learning](https://github.com/your-username/your-repo-name)
+**구매 전환 데이터를 기반으로 병목 구간을 진단하고, 통계적 실험을 통해 제품 변경 여부를 판단한 프로젝트**
 
-* **Objective**: 160만 건의 Sentiment140 데이터셋을 활용한 대규모 텍스트 감성 분류 CNN 모델 구축.
-* **Key Results**: 커널 크기 및 임베딩 차원 하이퍼파라미터 튜닝을 통해 **80.08%의 Test Accuracy** 달성.
-* **Competencies**: PyTorch, NLP 전처리, 연산 비용 최적화 분석.
+- **Problem** — View → Cart → Purchase 구매 퍼널을 분석하여 전환율 개선 우선순위를 정의.
+- **Funnel Analysis** — View → Cart **4.69%**, Cart → Purchase **36.98%**, View → Purchase **1.74%**를 확인하고 View → Cart 구간을 핵심 병목으로 식별.
+- **Experiment Design** — Purchase Conversion Rate를 Primary KPI로 설정하고 **Power Analysis와 MDE 기반 Sample Size**를 산출해 A/B 테스트 설계.
+- **Statistical Validation** — Treatment에서 **+12.42% Relative Lift**, Two-Proportion Z-Test **p=0.0182**, 95% CI **[+0.038%p, +0.405%p]** 확인.
+- **Decision** — 통계적 유의성은 확보했지만 사전 정의한 **15% MDE에는 미달**했기 때문에 단순 Full Rollout 대신 Treatment 개선 후 추가 실험을 제안.
+- **Retention** — Right Censoring을 고려해 **7일 재구매율 15.25%, 14일 재구매율 26.32%** 산출.
 
-#### 4. [HR 컨설팅 기업을 위한 맞춤형 RDBMS 설계](https://github.com/your-username/your-repo-name)
+**What this project demonstrates**  
+Experiment Design · Statistical Inference · Funnel Analysis · Product Decision Making
 
-* **Objective**: 분산된 스프레드시트 업무 환경을 대체할 중앙 집중형 관계형 데이터베이스 스키마 설계.
-* **Key Results**: 급여, 커미션, 프로젝트 트래킹 데이터를 무결성 있게 관리하는 **제4정규형 15개 테이블 스키마** 구축.
-* **Competencies**: SQL DDL DML, ERD 데이터 모델링, 비즈니스 로직 설계.
+**Tech:** Python · Pandas · NumPy · SciPy · Statsmodels · Matplotlib · Seaborn
 
-#### 5. [Amazon Prime Video 콘텐츠 트렌드 분석 : 탐색적 데이터 분석](https://colab.research.google.com/drive/1ZG9cNJF2YlDcU-lyAoapcfhKzLcJnd40?usp=sharing)
+---
 
-* **Objective**: 스트리밍 플랫폼의 시청 트렌드 및 장르 분포 분석을 통한 마케팅 인사이트 도출.
-* **Key Results**: Python 기반 자동화 탐색적 데이터 분석 파이프라인 구축 및 인사이트 시각화.
-* **Competencies**: Python Pandas Seaborn, 데이터 스토리텔링.
+## 02. Predictive Maintenance
+### [비용 민감형 설비 고장 예지보전 시스템](https://github.com/Jisoopak0822/Predictive-Maintenance/blob/main/README.md)
 
+**희소한 고장 데이터를 단순 분류 문제가 아닌 유지보수 비용 최적화 문제로 재정의한 프로젝트**
+
+- **Problem** — 실제 고장이 전체 데이터의 약 **3.4%**에 불과한 Class Imbalance 환경에서 Accuracy 중심 평가의 한계를 분석.
+- **Modeling** — Logistic Regression, Random Forest, Gradient Boosting, LightGBM과 **Class Weight / SMOTE** 전략을 비교.
+- **Evaluation** — Recall, Precision, F1, ROC-AUC, **PR-AUC**를 함께 평가해 희소 고장 탐지 능력을 검증.
+- **Leakage Prevention** — Train/Test 분리 후 Scaling, PCA, Sampling이 학습 데이터에만 적용되도록 Pipeline을 구성.
+- **Cost-sensitive Decision** — False Negative와 False Positive의 비용 차이를 Cost Function으로 정의하고 **고정 threshold 0.5 대신 비용 기반 최적 threshold** 탐색.
+- **Key Result** — 고장 탐지 Recall을 **59% → 78%**로 개선.
+- **Operational Policy** — 예측 확률을 Normal / Watch / Preventive Inspection / Critical 단계로 변환해 고위험 설비를 우선 점검하는 **Risk-Based Maintenance Policy** 설계.
+
+**What this project demonstrates**  
+Imbalanced Classification · Cost-sensitive ML · Threshold Optimization · ML Decision Policy
+
+**Tech:** Python · Scikit-learn · LightGBM · PCA · SMOTE · Pandas · NumPy
+
+---
+
+## 03. Credit Risk & Data Engineering
+### [대용량 금융 이력 기반 신용대출 부실 예측](https://github.com/Jisoopak0822/-/blob/main/home_credit_portfolio.ipynb)
+
+**메모리 제약이 있는 환경에서 대규모 금융 데이터를 처리하고 신용위험 예측 변수를 생성한 프로젝트**
+
+- **Problem** — 약 **2.68GB 규모의 다중 테이블 데이터**를 Pandas로 한 번에 처리할 때 발생하는 메모리 초과 문제 해결.
+- **Data Pipeline** — Python Chunk Processing과 SQLite를 결합해 대용량 데이터를 안정적으로 적재하는 파이프라인 구축.
+- **SQL Feature Engineering** — 약 **170만 건의 과거 대출 이력**을 JOIN 및 Aggregation하여 고객별 총 채무액, 과거 대출 건수 등의 파생 변수 생성.
+- **Modeling** — 생성된 고객·대출 이력 변수를 LightGBM 기반 부실 예측 모델에 적용.
+- **Key Result** — 데이터 처리 과정의 메모리 사용량을 **70% 이상 절감**하고, 직접 생성한 파생 변수들이 모델 Feature Importance **2위와 4위**를 기록해 높은 예측 기여도를 확인.
+
+**What this project demonstrates**  
+Large-scale Data Processing · SQL · Feature Engineering · Credit Risk Modeling
+
+**Tech:** Python · SQL · SQLite · Pandas · LightGBM · Chunk Processing
+
+---
+
+# Academic & Foundation Projects
+
+핵심 프로젝트 외에 데이터베이스 설계와 딥러닝/NLP 기반 역량을 확장한 프로젝트입니다.
+
+### CNN 기반 Twitter Sentiment Classification
+160만 건의 Sentiment140 데이터를 활용해 PyTorch CNN 모델을 구축하고 **Test Accuracy 80.08%** 달성.
+
+`PyTorch · CNN · NLP · Hyperparameter Tuning`
+
+### HR Consulting RDBMS Design
+급여·커미션·프로젝트 데이터를 관리하기 위한 **15개 테이블 관계형 데이터베이스와 ERD** 설계.
+
+`SQL · RDBMS · ERD · Normalization`
+
+### Amazon Prime Video EDA
+콘텐츠 장르 및 시청 트렌드를 분석하고 데이터 기반 마케팅 인사이트를 시각화.
+
+`Python · Pandas · Seaborn · EDA`
 ---
