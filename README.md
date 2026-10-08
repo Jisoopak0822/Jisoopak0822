@@ -61,22 +61,23 @@ Imbalanced Classification · Cost-sensitive ML · Threshold Optimization · ML D
 
 ---
 
-## 03. Credit Risk & Data Engineering
-### [대용량 금융 이력 기반 신용대출 부실 예측](https://github.com/Jisoopak0822/-/blob/main/home_credit_portfolio.ipynb)
+## 03. Credit Risk Modeling & Loan Approval Optimization
 
-**메모리 제약이 있는 환경에서 대규모 금융 데이터를 처리하고 신용위험 예측 변수를 생성한 프로젝트**
+### [신용위험 예측 기반 대출 승인 전략 및 예상 신용손실 분석](https://github.com/Jisoopak0822/Credit-Risk-Modeling-Loan-Approval-Optimization/blob/main/README.md)
 
-- **Problem** — 약 **2.68GB 규모의 다중 테이블 데이터**를 Pandas로 한 번에 처리할 때 발생하는 메모리 초과 문제 해결.
-- **Data Pipeline** — Python Chunk Processing과 SQLite를 결합해 대용량 데이터를 안정적으로 적재하는 파이프라인 구축.
-- **SQL Feature Engineering** — 약 **170만 건의 과거 대출 이력**을 JOIN 및 Aggregation하여 고객별 총 채무액, 과거 대출 건수 등의 파생 변수 생성.
-- **Modeling** — 생성된 고객·대출 이력 변수를 LightGBM 기반 부실 예측 모델에 적용.
-- **Key Result** — 데이터 처리 과정의 메모리 사용량을 **70% 이상 절감**하고, 직접 생성한 파생 변수들이 모델 Feature Importance **2위와 4위**를 기록해 높은 예측 기여도를 확인.
+**약 30만 건의 고객 신청 정보와 170만 건의 외부 신용 이력을 통합하여 신용위험을 예측하고, 대출 승인율과 예상 손실 간 Trade-off를 분석한 금융 의사결정 지원 프로젝트**
+
+- **Business Problem** — 금융기관의 신용손실 관리와 우량 고객의 대출 기회 확보라는 상충하는 목표를 정의하고, 승인율과 신용위험을 함께 고려하는 분석 프레임워크 설계.
+- **Data Engineering** — Python Chunk Processing과 SQLite를 활용해 대규모 금융 데이터를 적재하고, SQL `GROUP BY` 및 `LEFT JOIN`으로 고객 단위 Credit Risk Data Mart 구축.
+- **Risk Analytics & Feature Engineering** — 소득 대비 대출금, 기존 미상환 부채, 과거 신용 기록 등을 활용해 금융 리스크 관련 파생 변수 생성 및 고객군별 상환 곤란 비율 분석.
+- **Predictive Modeling** — Logistic Regression과 LightGBM의 ROC-AUC, PR-AUC 및 Calibration 성능을 비교하고, 데이터 누출을 방지하는 전처리 파이프라인 구축.
+- **Business Optimization** — 위험확률 Threshold에 따른 대출 승인율, 위험 고객 차단율 및 정상 고객 거절률을 분석하고, 가상의 비즈니스 제약조건을 반영한 승인 정책 비교.
+- **Financial Impact Simulation** — PD·LGD·EAD 가정에 기반한 예상 신용손실 및 위험조정 수익 시뮬레이션을 통해 대출 승인 정책별 금융성과 비교.
 
 **What this project demonstrates**  
-Large-scale Data Processing · SQL · Feature Engineering · Credit Risk Modeling
+Business-Oriented Data Science · Credit Risk Analytics · SQL Data Engineering · Predictive Modeling · Financial Decision Optimization
 
-**Tech:** Python · SQL · SQLite · Pandas · LightGBM · Chunk Processing
-
+**Tech:** Python · SQL · SQLite · Pandas · Scikit-learn · LightGBM · Probability Calibration · Financial Simulation
 ---
 
 # Academic & Foundation Projects
