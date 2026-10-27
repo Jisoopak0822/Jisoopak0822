@@ -31,7 +31,7 @@
 **구매 전환 데이터를 기반으로 병목 구간을 진단하고, 통계적 실험을 통해 제품 변경 여부를 판단한 프로젝트**
 
 - **Problem** — View → Cart → Purchase 구매 퍼널을 분석하여 전환율 개선 우선순위를 정의.
-- **Funnel Analysis** — View → Cart **4.69%**, Cart → Purchase **36.98%**, View → Purchase **1.74%**를 확인하고 View → Cart 구간을 핵심 병목으로 식별.
+- **Funnel Analysis** — View → Cart **4.69%**, Cart → Purchase **36.98%**, View → Purchase 1.74%를 확인하고 View → Cart 구간을 핵심 병목으로 식별.
 - **Experiment Design** — Purchase Conversion Rate를 Primary KPI로 설정하고 **Power Analysis와 MDE 기반 Sample Size**를 산출해 A/B 테스트 설계.
 - **Statistical Validation** — Treatment에서 **+12.42% Relative Lift**, Two-Proportion Z-Test **p=0.0182**, 95% CI **[+0.038%p, +0.405%p]** 확인.
 - **Decision** — 통계적 유의성은 확보했지만 사전 정의한 **15% MDE에는 미달**했기 때문에 단순 Full Rollout 대신 Treatment 개선 후 추가 실험을 제안.
@@ -51,12 +51,12 @@ Experiment Design · Statistical Inference · Funnel Analysis · Product Decisio
 
 **희소한 고장 데이터를 단순 분류 문제가 아닌 유지보수 비용 최적화 문제로 재정의한 프로젝트**
 
-- **Problem** — 실제 고장이 전체 데이터의 약 **3.4%**에 불과한 Class Imbalance 환경에서 Accuracy 중심 평가의 한계를 분석.
+- **Problem** — 실제 고장이 전체 데이터의 약 3.4%에 불과한 Class Imbalance 환경에서 Accuracy 중심 평가의 한계를 분석.
 - **Modeling** — Logistic Regression, Random Forest, Gradient Boosting, LightGBM과 **Class Weight / SMOTE** 전략을 비교.
 - **Evaluation** — Recall, Precision, F1, ROC-AUC, **PR-AUC**를 함께 평가해 희소 고장 탐지 능력을 검증.
 - **Leakage Prevention** — Train/Test 분리 후 Scaling, PCA, Sampling이 학습 데이터에만 적용되도록 Pipeline을 구성.
 - **Cost-sensitive Decision** — False Negative와 False Positive의 비용 차이를 Cost Function으로 정의하고 **고정 Threshold 0.5 대신 비용 기반 최적 Threshold** 탐색.
-- **Key Result** — 고장 탐지 Recall을 **59% → 78%**로 개선.
+- **Key Result** — 고장 탐지 Recall을 59% → 78%로 개선.
 - **Operational Policy** — 예측 확률을 Normal / Watch / Preventive Inspection / Critical 단계로 변환해 고위험 설비를 우선 점검하는 **Risk-Based Maintenance Policy** 설계.
 
 **What this project demonstrates**
@@ -99,7 +99,7 @@ Business-Oriented Data Science · Credit Risk Analytics · SQL Data Engineering 
 - **Retrieval Engineering** — BM25와 문자 기반 TF-IDF 검색을 결합하고, **Reciprocal Rank Fusion(RRF)** 으로 검색 결과를 통합해 서로 다른 검색 방식의 순위를 활용.
 - **Data Quality & Validation** — 문서 청킹과 출처 메타데이터를 관리하고, 검증된 문서만 검색 대상으로 사용하는 필터링 정책 적용.
 - **Automated Testing** — Pytest 기반 **9개 자동화 테스트 통과**로 검색과 API의 주요 기능 검증.
-- **Retrieval Evaluation** — 소규모 샘플 문서 및 4개 평가 질문에서 **Recall@3 1.000, Hit@3 1.000, MRR@3 1.000** 기록. 해당 결과는 초기 기능 검증 기준이며 일반적인 검색 성능을 의미하지 않음.
+- **Retrieval Evaluation** — 소규모 샘플 문서 및 4개 평가 질문에서 **Recall 3 1.000, Hit 3 1.000, MRR 3 1.000** 기록. 해당 결과는 초기 기능 검증 기준이며 일반적인 검색 성능을 의미하지 않음.
 - **Future Improvements** — 실제 Embedding 기반 검색, CrossEncoder Reranking, 대규모 Golden Set 평가, 문서 인제스트 자동화 및 Docker 배포로 확장 예정.
 
 **Current Status:** Stage 1 — Local Retrieval Prototype (LLM 답변 생성 및 실서비스 배포 전 단계)
