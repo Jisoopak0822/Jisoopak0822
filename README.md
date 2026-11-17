@@ -1,135 +1,116 @@
-## 통계적 실험과 머신러닝으로 비즈니스 의사결정을 설계하는 Data Scientist 박지수입니다.
+# 박지수 | Data Science · Machine Learning · AI
 
-수학·통계학 기반의 정량적 분석 역량을 바탕으로 **실험 설계, 예측 모델링, 대용량 데이터 처리 및 AI 기반 데이터 서비스 구현**을 실제 비즈니스 문제에 연결하는 데 집중합니다.
+안녕하세요. 수학을 전공하고 통계학 석사과정을 마친 박지수입니다.
 
-단순히 높은 모델 Accuracy를 만드는 것보다 **어떤 지표를 최적화해야 하는지, 어떤 오류가 더 비싼지, 분석 결과를 실제 의사결정으로 어떻게 연결할지**를 중요하게 생각합니다.
+저는 데이터를 분석할 때 **결과가 왜 그렇게 나왔는지 설명할 수 있는지**를 중요하게 생각합니다. 숫자가 예상과 다르게 나올 때가 오히려 공부가 많이 되는 순간이었습니다. 미국 주택시장 프로젝트에서는 소득과 주택가격의 상관관계가 높게 나왔지만 금융위기 시기에는 서로 다른 움직임을 보였고, 예측 프로젝트에서는 특정 알고리즘을 고집하기보다 실제 검증 결과를 기준으로 접근 방법을 비교했습니다.
 
-이커머스 A/B Testing, 제조 Predictive Maintenance, 금융 Credit Risk Modeling 프로젝트를 통해 **문제 정의 → 데이터 처리 → 통계/ML 모델링 → 검증 → 비즈니스 의사결정**의 전체 분석 과정을 구현했습니다.
+대학 수업에서 시작한 분석을 보고서로만 끝내지 않고, 관심이 생긴 문제는 따로 코드를 작성하고 실험하며 확장해 왔습니다. 최근에는 **모델링뿐 아니라 결과를 실제로 사용할 수 있는 형태로 만드는 일**에도 관심을 갖고 RAG 기반 문서 검색 API를 개발하고 있습니다.
 
-또한 FastAPI 기반 RAG 문서 검색 시스템을 구축하며 **비정형 데이터 처리, 검색 알고리즘 통합, API 개발 및 자동화된 품질 검증**으로 기술 역량을 확장하고 있습니다.
-
----
-
-### 🛠 Technical Skills
-
-- **Languages:** Python, SQL
-- **Statistics & Experimentation:** A/B Testing, Hypothesis Testing, Power Analysis, Confidence Interval, Retention Analysis
-- **Machine Learning:** Scikit-learn, LightGBM, Random Forest, Gradient Boosting, Logistic Regression, PCA, SMOTE
-- **Data Engineering:** SQLite, SQL JOIN/Aggregation, Chunk Processing, RDBMS Design, Data Pipeline
-- **AI & Backend:** FastAPI, REST API, RAG, BM25, TF-IDF, Reciprocal Rank Fusion (RRF), Pytest
-- **Deep Learning & NLP:** PyTorch, CNN, Sentiment Analysis
-- **Visualization & Analytics:** Pandas, NumPy, Matplotlib, Seaborn, Tableau
+**관심 분야:** Statistical Analysis · Predictive Modeling · NLP/AI · Information Retrieval
 
 ---
 
-# Featured Projects
+## 대표 프로젝트
 
-## 01. E-commerce Experimentation
+### 01. [미국 주택시장과 경제지표의 관계 분석 (2000–2023)](https://github.com/Jisoopak0822/US-Housing-Market-Economic-Analysis)
 
-### [A/B 테스트 및 구매 퍼널·리텐션 분석](https://github.com/Jisoopak0822/-A-B-/blob/main/README.md)
+**R · ggplot2 · EDA · Pearson Correlation | Baruch College, STA 9750 · 5인 팀 프로젝트**
 
-**구매 전환 데이터를 기반으로 병목 구간을 진단하고, 통계적 실험을 통해 제품 변경 여부를 판단한 프로젝트**
+미국의 집값은 인구가 늘어나서 오르는 걸까, 아니면 소득과 소비가 늘어나서 오르는 걸까? 이 질문을 가지고 Zillow, Census, BEA 자료를 지역·연도별로 정리해 비교했습니다.
 
-- **Problem** — View → Cart → Purchase 구매 퍼널을 분석하여 전환율 개선 우선순위를 정의.
-- **Funnel Analysis** — View → Cart **4.69%**, Cart → Purchase **36.98%**, View → Purchase 1.74%를 확인하고 View → Cart 구간을 핵심 병목으로 식별.
-- **Experiment Design** — Purchase Conversion Rate를 Primary KPI로 설정하고 **Power Analysis와 MDE 기반 Sample Size**를 산출해 A/B 테스트 설계.
-- **Statistical Validation** — Treatment에서 **+12.42% Relative Lift**, Two-Proportion Z-Test **p=0.0182**, 95% CI **[+0.038%p, +0.405%p]** 확인.
-- **Decision** — 통계적 유의성은 확보했지만 사전 정의한 **15% MDE에는 미달**했기 때문에 단순 Full Rollout 대신 Treatment 개선 후 추가 실험을 제안.
-- **Retention** — Right Censoring을 고려해 **7일 재구매율 15.25%, 14일 재구매율 26.32%** 산출.
+저는 팀에서 **시각화와 변수 간 관계 분석**을 맡았고, 팀 리더를 도와 추가 자료를 찾거나 그래프에서 읽을 수 있는 해석을 정리하는 역할도 했습니다. 처음에는 인구와 주택가격의 관계가 뚜렷할 것이라 예상했지만, 분석 결과 인구 지표와의 상관계수는 **0.22**로 약했습니다. 반면 가처분소득은 **0.72**, 소비지출은 **0.73**으로 더 높았습니다.
 
-**What this project demonstrates**
+흥미로웠던 부분은 이 결과가 **모든 시기에 동일하게 적용되지는 않는다**는 점이었습니다. 2008년 금융위기 전후에는 주택가격이 크게 떨어졌지만 소득·소비의 움직임은 그만큼 일치하지 않았습니다. 그래서 상관계수만 제시하기보다 시계열 그래프와 지역별 비교, 주택가격 변화 애니메이션을 함께 사용해 결과를 설명했습니다.
 
-Experiment Design · Statistical Inference · Funnel Analysis · Product Decision Making
+서로 다른 기관의 데이터를 연도와 지역 단위로 맞추는 과정도 중요했습니다. 특히 지역별 인구 지표가 **총인구가 아니라 주별 인구의 평균**으로 집계된 값이어서, 이를 실제 인구 유입이나 이주 규모로 해석할 수 없다는 한계가 있었습니다. 이 프로젝트를 통해 데이터의 정의를 확인하지 않으면 그래프가 그럴듯해도 결론은 잘못될 수 있다는 점을 배웠습니다.
 
-**Tech:** Python · Pandas · NumPy · SciPy · Statsmodels · Matplotlib · Seaborn
+[분석 코드·그래프·애니메이션·보고서 보기](https://github.com/Jisoopak0822/US-Housing-Market-Economic-Analysis)
 
----
+### 02. [부동산 과세평가액 예측 | Property Valuation Competition](https://github.com/Jisoopak0822/--------keggle-competition)
 
-## 02. Predictive Maintenance
+**Python · LightGBM · Feature Engineering · RMSE | STA 9890 수업 경진대회 및 후속 재분석**
 
-### [비용 민감형 설비 고장 예지보전 시스템](https://github.com/Jisoopak0822/Predictive-Maintenance/blob/main/README.md)
+2015–2018년의 과세평가 이력과 건축물 정보를 이용해 **2019년 부동산 과세평가액**을 예측했습니다. 처음 수업 프로젝트에서는 R과 XGBoost·앙상블로 접근했고, 이후 Python으로 다시 분석하면서 예측 대상을 정의하는 방법부터 바꿔 보았습니다.
 
-**희소한 고장 데이터를 단순 분류 문제가 아닌 유지보수 비용 최적화 문제로 재정의한 프로젝트**
+가장 최근 평가액을 그대로 쓰는 기준 모델, 평가액 자체를 예측하는 LightGBM, 두 모델의 평균을 비교했습니다. 그런데 과거 평가액이 이미 주어지는 문제라면 **전체 가격보다 전년도 대비 변화량을 예측하는 편이 낫지 않을까?** 싶었습니다. 실제로 동일한 홀드아웃 데이터에서 직접 예측 모델의 RMSE **45,404.28**보다 변화량 모델의 **29,775.36**이 더 낮았습니다.
 
-- **Problem** — 실제 고장이 전체 데이터의 약 3.4%에 불과한 Class Imbalance 환경에서 Accuracy 중심 평가의 한계를 분석.
-- **Modeling** — Logistic Regression, Random Forest, Gradient Boosting, LightGBM과 **Class Weight / SMOTE** 전략을 비교.
-- **Evaluation** — Recall, Precision, F1, ROC-AUC, **PR-AUC**를 함께 평가해 희소 고장 탐지 능력을 검증.
-- **Leakage Prevention** — Train/Test 분리 후 Scaling, PCA, Sampling이 학습 데이터에만 적용되도록 Pipeline을 구성.
-- **Cost-sensitive Decision** — False Negative와 False Positive의 비용 차이를 Cost Function으로 정의하고 **고정 Threshold 0.5 대신 비용 기반 최적 Threshold** 탐색.
-- **Key Result** — 고장 탐지 Recall을 59% → 78%로 개선.
-- **Operational Policy** — 예측 확률을 Normal / Watch / Preventive Inspection / Critical 단계로 변환해 고위험 설비를 우선 점검하는 **Risk-Based Maintenance Policy** 설계.
+점수가 좋아진 뒤에도 이력이 없는 부동산이나 고가 부동산에서는 오차가 컸습니다. 그래서 전체 점수만 보고 끝내지 않고, **어떤 집에서 잘 맞고 어떤 집에서 틀리는지**를 따로 살펴봤습니다. 마감 후 Kaggle 제출에서 확인한 점수는 Public **31,600.658**, Private **30,339.595**이며, **공식 대회 순위나 수상 실적은 아닙니다.**
 
-**What this project demonstrates**
-
-Imbalanced Classification · Cost-sensitive ML · Threshold Optimization · ML Decision Policy
-
-**Tech:** Python · Scikit-learn · LightGBM · PCA · SMOTE · Pandas · NumPy
+[모델 비교, 오류 분석 및 코드 보기](https://github.com/Jisoopak0822/--------keggle-competition)
 
 ---
 
-## 03. Credit Risk Modeling & Loan Approval Optimization
+## 딥러닝 · AI 구현 프로젝트
 
-### [신용위험 예측 기반 대출 승인 전략 및 예상 신용손실 분석](https://github.com/Jisoopak0822/Credit-Risk-Modeling-Loan-Approval-Optimization/blob/main/README.md)
+### 03. [CNN 기반 Twitter 감성 분류](https://github.com/Jisoopak0822/Twitter-Sentiment-Classification-via-CNN/blob/main/README.md)
 
-**약 30만 건의 고객 신청 정보와 170만 건의 외부 신용 이력을 통합하여 신용위험을 예측하고, 대출 승인율과 예상 손실 간 Trade-off를 분석한 금융 의사결정 지원 프로젝트**
+**Python · PyTorch · CNN · NLP**
 
-- **Business Problem** — 금융기관의 신용손실 관리와 우량 고객의 대출 기회 확보라는 상충하는 목표를 정의하고, 승인율과 신용위험을 함께 고려하는 분석 프레임워크 설계.
-- **Data Engineering** — Python Chunk Processing과 SQLite를 활용해 대규모 금융 데이터를 적재하고, SQL `GROUP BY` 및 `LEFT JOIN`으로 고객 단위 Credit Risk Data Mart 구축.
-- **Risk Analytics & Feature Engineering** — 소득 대비 대출금, 기존 미상환 부채, 과거 신용 기록 등을 활용해 금융 리스크 관련 파생 변수 생성 및 고객군별 상환 곤란 비율 분석.
-- **Predictive Modeling** — Logistic Regression과 LightGBM의 ROC-AUC, PR-AUC 및 Calibration 성능을 비교하고, 데이터 누출을 방지하는 전처리 파이프라인 구축.
-- **Business Optimization** — 위험확률 Threshold에 따른 대출 승인율, 위험 고객 차단율 및 정상 고객 거절률을 분석하고, 가상의 비즈니스 제약조건을 반영한 승인 정책 비교.
-- **Financial Impact Simulation** — PD·LGD·EAD 가정에 기반한 예상 신용손실 및 위험조정 수익 시뮬레이션을 통해 대출 승인 정책별 금융성과 비교.
+약 **160만 건의 Sentiment140 데이터**로 트윗의 긍정·부정을 분류하는 CNN 모델을 구축했습니다. 텍스트를 모델이 처리할 수 있는 형태로 바꾸고, 학습 설정을 조정하며 성능 변화를 확인했습니다. **Test Accuracy 80.08%**를 기록했습니다.
 
-**What this project demonstrates**
+이 프로젝트에서는 이미지뿐 아니라 문장에도 합성곱 신경망을 적용할 수 있다는 점을 직접 구현하며 이해했습니다. 동시에 Accuracy 하나로 모델이 모든 문장을 잘 분류한다고 말할 수는 없다는 점도 생각하게 됐습니다.
 
-Business-Oriented Data Science · Credit Risk Analytics · SQL Data Engineering · Predictive Modeling · Financial Decision Optimization
+[모델 구성과 결과 보기](https://github.com/Jisoopak0822/Twitter-Sentiment-Classification-via-CNN/blob/main/README.md)
 
-**Tech:** Python · SQL · SQLite · Pandas · Scikit-learn · LightGBM · Probability Calibration · Financial Simulation
+### 04. [Operational RAG | 기술 문서 검색 시스템](https://github.com/Jisoopak0822/operational-rag-portfolio)
 
----
+**Python · FastAPI · BM25 · TF-IDF · RRF · Pytest**
 
-## 04. Operational RAG — Document Retrieval System
+기술 문서에서 오류 코드나 해결 절차를 찾을 때, 관련 없는 문서가 먼저 검색되면 그다음 단계의 답변도 믿기 어렵다는 생각에서 시작했습니다. 그래서 우선 **검색 결과를 확인하고 API로 반환하는 과정**부터 구현했습니다.
 
-### [FastAPI 기반 문서 검색 및 RAG 챗봇 시스템](https://github.com/Jisoopak0822/operational-rag-portfolio)
+BM25와 문자 기반 TF-IDF 검색 결과를 **RRF(Reciprocal Rank Fusion)**로 합치고, 문서 출처와 검색 결과를 확인할 수 있도록 구성했습니다. FastAPI로 `/health`, `/chat` 엔드포인트를 만들고 주요 기능에 대한 **Pytest 9개 테스트**를 통과시켰습니다.
 
-**비정형 기술 문서를 검색 가능한 지식으로 변환하고, 복수의 검색 알고리즘과 출처 검증 정책을 결합해 신뢰할 수 있는 문서 검색 서비스를 구현한 프로젝트**
+평가 질문 4개에서는 Recall@3, Hit@3, MRR@3가 모두 1.0이었지만, 샘플이 작기 때문에 일반적인 검색 품질을 입증한 결과로 보지는 않습니다. 현재는 **로컬 검색 프로토타입 단계**이며, LLM 답변 생성이나 실서비스 배포까지 완성한 프로젝트라고 소개하지 않습니다. 다음에는 임베딩 검색과 재순위화, 더 큰 평가 데이터셋으로 확장하고 싶습니다.
 
-- **Problem** — 기술 문서에서 정확한 오류 코드와 관련 내용을 찾기 어렵고, 검증되지 않은 문서가 응답 근거로 사용될 위험을 해결하기 위한 검색 시스템 설계.
-- **Backend Architecture** — FastAPI 기반 REST API와 웹 인터페이스를 구축해 사용자 질문, 검색 처리, 결과 반환 과정을 서비스 구조로 구현.
-- **Retrieval Engineering** — BM25와 문자 기반 TF-IDF 검색을 결합하고, **Reciprocal Rank Fusion(RRF)** 으로 검색 결과를 통합해 서로 다른 검색 방식의 순위를 활용.
-- **Data Quality & Validation** — 문서 청킹과 출처 메타데이터를 관리하고, 검증된 문서만 검색 대상으로 사용하는 필터링 정책 적용.
-- **Automated Testing** — Pytest 기반 **9개 자동화 테스트 통과**로 검색과 API의 주요 기능 검증.
-- **Retrieval Evaluation** — 소규모 샘플 문서 및 4개 평가 질문에서 **Recall 3 1.000, Hit 3 1.000, MRR 3 1.000** 기록. 해당 결과는 초기 기능 검증 기준이며 일반적인 검색 성능을 의미하지 않음.
-- **Future Improvements** — 실제 Embedding 기반 검색, CrossEncoder Reranking, 대규모 Golden Set 평가, 문서 인제스트 자동화 및 Docker 배포로 확장 예정.
-
-**Current Status:** Stage 1 — Local Retrieval Prototype (LLM 답변 생성 및 실서비스 배포 전 단계)
-
-**What this project demonstrates**
-
-RAG Architecture · Information Retrieval · Search Fusion · REST API Development · Data Validation · Automated Testing
-
-**Tech:** Python · FastAPI · BM25 · TF-IDF · RRF · Pytest · HTML/CSS/JavaScript
+[구현 코드와 테스트 결과 보기](https://github.com/Jisoopak0822/operational-rag-portfolio)
 
 ---
 
-# Academic & Foundation Projects
+## 개인 프로젝트 및 추가 작업
 
-핵심 프로젝트 외에 데이터베이스 설계와 딥러닝/NLP 기반 역량을 확장한 프로젝트입니다.
+### [HR Consulting RDBMS 설계](https://github.com/Jisoopak0822/-HR-Consulting-Firm-Database-System/blob/main/Project%20Final%20Report.pdf)
 
-### [CNN 기반 Twitter Sentiment Classification](https://github.com/Jisoopak0822/Twitter-Sentiment-Classification-via-CNN/blob/main/README.md)
+**SQL · RDBMS · ERD · Normalization**
 
-160만 건의 Sentiment140 데이터를 활용해 PyTorch CNN 모델을 구축하고 **Test Accuracy 80.08%** 달성.
+급여, 커미션, 프로젝트 관리 데이터를 다루기 위한 **15개 테이블의 관계형 데이터베이스와 ERD**를 설계했습니다. 데이터를 분석하기 전에, 서로 연관된 정보가 어떤 키로 연결되고 어떤 구조로 저장되어야 하는지를 고민한 작업입니다.
 
-`PyTorch · CNN · NLP · Hyperparameter Tuning`
+### [이커머스 A/B 테스트 · 퍼널 분석](https://github.com/Jisoopak0822/-A-B-/blob/main/README.md)
 
-### [HR Consulting RDBMS Design](https://github.com/Jisoopak0822/-HR-Consulting-Firm-Database-System/blob/main/Project%20Final%20Report.pdf)
+**Python · Hypothesis Testing · Funnel · Retention**
 
-급여·커미션·프로젝트 데이터를 관리하기 위한 **15개 테이블 관계형 데이터베이스와 ERD** 설계.
+구매 퍼널에서 **View → Cart 전환율 4.69%**를 병목 구간으로 확인했습니다. A/B 테스트에서 **상대 개선율 12.42%, p=0.0182**가 나왔지만, 사전에 정한 **15% MDE**에는 미치지 못해 전면 적용보다 추가 실험을 제안했습니다. 통계적 유의성과 실제로 도입할 만한 개선 폭은 다르다는 점을 고민한 프로젝트입니다.
 
-`SQL · RDBMS · ERD · Normalization`
+### [설비 고장 예측 · Predictive Maintenance](https://github.com/Jisoopak0822/Predictive-Maintenance/blob/main/README.md)
 
-### [Amazon Prime Video EDA](https://github.com/Jisoopak0822/Amazon-Prime-Video-Content-Analysis/blob/main/README.md)
+**Python · Scikit-learn · Imbalanced Classification · Threshold Optimization**
 
-콘텐츠 장르 및 시청 트렌드를 분석하고 데이터 기반 마케팅 인사이트를 시각화.
+고장 비율이 약 **3.4%**인 데이터에서 Accuracy만 보면 고장을 놓칠 수 있어 Recall과 오탐 비용을 함께 고려했습니다. 여러 모델과 불균형 처리 방법을 비교했고, 고장 탐지 Recall을 **59%에서 78%로 개선**했습니다. 현장에서는 어떤 오류가 더 비싼지에 따라 의사결정 기준이 달라진다는 점을 배웠습니다.
 
-`Python · Pandas · Seaborn · EDA`
+### [신용위험 예측 · Credit Risk Modeling](https://github.com/Jisoopak0822/Credit-Risk-Modeling-Loan-Approval-Optimization/blob/main/README.md)
+
+**Python · SQL · SQLite · LightGBM · Risk Analytics**
+
+약 **30만 건의 신청 정보와 170만 건의 신용 이력**을 고객 단위로 결합하고 신용위험을 예측했습니다. SQLite와 청크 단위 적재를 사용했고, 분류 임계값에 따라 **위험 고객을 놓치는 문제와 정상 고객을 거절하는 문제**가 어떻게 달라지는지 비교했습니다. 예상 손실 계산은 실제 금융기관 정책이 아닌 가정 기반 시뮬레이션입니다.
+
+### [Amazon Prime Video 콘텐츠 EDA](https://github.com/Jisoopak0822/Amazon-Prime-Video-Content-Analysis/blob/main/README.md)
+
+**Python · Pandas · Seaborn · EDA**
+
+콘텐츠 장르와 구성의 특징을 탐색하고 시각화했습니다. 복잡한 모델이 필요한 문제와, 먼저 데이터를 이해하고 설명하는 일이 중요한 문제를 구분하는 연습이 됐습니다.
+
+---
+
+## 사용 기술
+
+| 분야 | 기술 |
+|---|---|
+| 프로그래밍 및 데이터 처리 | Python, R, SQL, Pandas, NumPy, SQLite |
+| 통계 분석 | 가설검정, 신뢰구간, A/B 테스트, 상관분석, 실험 설계 |
+| 머신러닝 | Scikit-learn, LightGBM, Random Forest, Logistic Regression, PCA, SMOTE |
+| 딥러닝 및 NLP | PyTorch, CNN, 텍스트 전처리 |
+| 검색 시스템 및 API | FastAPI, BM25, TF-IDF, RRF, Pytest |
+| 시각화 | ggplot2, Matplotlib, Seaborn, Tableau |
+
+---
+
+제가 앞으로 더 깊게 공부하고 싶은 부분은 **좋은 모델을 만드는 과정뿐 아니라, 그 모델의 평가 결과를 믿을 수 있게 검증하고 실제 사용 환경에 연결하는 방법**입니다. 프로젝트마다 잘된 점뿐 아니라 아직 해결하지 못한 부분도 남겨 두고, 다음 작업에서 개선할 기준으로 삼고 있습니다.
