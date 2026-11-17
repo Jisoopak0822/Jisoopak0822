@@ -28,7 +28,7 @@
 
 ### 02. [부동산 과세평가액 예측 | Property Valuation Competition](https://github.com/Jisoopak0822/--------keggle-competition)
 
-**Python · LightGBM · Feature Engineering · RMSE | STA 9890 수업 경진대회 및 후속 재분석**
+**Python · LightGBM · Feature Engineering · RMSE | Kaggle 경진대회 및 후속 재분석**
 
 2015–2018년의 과세평가 이력과 건축물 정보를 이용해 **2019년 부동산 과세평가액**을 예측했습니다. 처음 수업 프로젝트에서는 R과 XGBoost·앙상블로 접근했고, 이후 Python으로 다시 분석하면서 예측 대상을 정의하는 방법부터 바꿔 보았습니다.
 
