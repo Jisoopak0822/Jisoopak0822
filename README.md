@@ -78,13 +78,13 @@ BM25와 문자 기반 TF-IDF 검색 결과를 **RRF(Reciprocal Rank Fusion)**로
 
 **Python · Hypothesis Testing · Funnel · Retention**
 
-구매 퍼널에서 **View → Cart 전환율 4.69%**를 병목 구간으로 확인했습니다. A/B 테스트에서 **상대 개선율 12.42%, p=0.0182**가 나왔지만, 사전에 정한 **15% MDE**에는 미치지 못해 전면 적용보다 추가 실험을 제안했습니다. 통계적 유의성과 실제로 도입할 만한 개선 폭은 다르다는 점을 고민한 프로젝트입니다.
+구매 퍼널에서 View → Cart 전환율 4.69%를 병목 구간으로 확인했습니다. A/B 테스트에서 **상대 개선율 12.42%, p=0.0182**가 나왔지만, 사전에 정한 **15% MDE**에는 미치지 못해 전면 적용보다 추가 실험을 제안했습니다. 통계적 유의성과 실제로 도입할 만한 개선 폭은 다르다는 점을 고민한 프로젝트입니다.
 
 ### [설비 고장 예측 · Predictive Maintenance](https://github.com/Jisoopak0822/Predictive-Maintenance/blob/main/README.md)
 
 **Python · Scikit-learn · Imbalanced Classification · Threshold Optimization**
 
-고장 비율이 약 **3.4%**인 데이터에서 Accuracy만 보면 고장을 놓칠 수 있어 Recall과 오탐 비용을 함께 고려했습니다. 여러 모델과 불균형 처리 방법을 비교했고, 고장 탐지 Recall을 **59%에서 78%로 개선**했습니다. 현장에서는 어떤 오류가 더 비싼지에 따라 의사결정 기준이 달라진다는 점을 배웠습니다.
+고장 비율이 약 3.4% 인 데이터에서 Accuracy만 보면 고장을 놓칠 수 있어 Recall과 오탐 비용을 함께 고려했습니다. 여러 모델과 불균형 처리 방법을 비교했고, 고장 탐지 Recall을 **59%에서 78%로 개선**했습니다. 현장에서는 어떤 오류가 더 비싼지에 따라 의사결정 기준이 달라진다는 점을 배웠습니다.
 
 ### [신용위험 예측 · Credit Risk Modeling](https://github.com/Jisoopak0822/Credit-Risk-Modeling-Loan-Approval-Optimization/blob/main/README.md)
 
